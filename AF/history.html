@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngeFra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="icon" type="image/jpeg" href="images/icon.jpg">
+</head>
+<body>
+<div class="Container">
+    <div class="imagen-con-frase">
+        <img src="images/inicio.jpeg" alt="Descripción de la imagen">
+        <div class="frase-superpuesta">Bienvenida a nuestra historia de amor</div>
+    </div>
+</div>
+
+<h1 class="Subtitle">Museos</h1>
+<div class="Reel">
+<div class="carousel-container">
+    <div class="carousel">
+    <div><img src="images/Museos (1).jpeg" alt="Imagen 1"></div>
+    <div><img src="images/Museos (2).jpeg" alt="Imagen 2"></div>
+    <div><img src="images/Museos (3).jpeg" alt="Imagen 3"></div>
+    <div><img src="images/Museos (4).jpeg" alt="Imagen "></div>
+    <div><img src="images/Museos (5).jpeg" alt="Imagen 3"></div>
+</div>
+</div>
+</div>
+
+<h1 class="Subtitle">GYM</h1>
+<div class="Reel">
+    
+    <div class="carousel-container2">
+        <div class="carousel">
+        <div><img src="images/gym (1).jpeg" alt="Imagen 1"></div>
+        <div><img src="images/gym (2).jpeg" alt="Imagen 2"></div>
+        <div><img src="images/gym (3).jpeg" alt="Imagen 3"></div>
+        <div><img src="images/gym (4).jpeg" alt="Imagen 4"></div>
+        <div><img src="images/gym (5).jpeg" alt="Imagen 5"></div>
+    </div>
+    </div>
+    </div>
+
+<h1 class="Subtitle">Viajes</h1>
+    <div class="Reel">
+        <div class="carousel-container3">
+            <div class="carousel">
+            <div><img src="images/viajes (1).jpeg" alt="Imagen 1"></div>
+            <div><img src="images/viajes (2).jpeg" alt="Imagen 2"></div>
+            <div><img src="images/viajes (3).jpeg" alt="Imagen 3"></div>
+            <div><img src="images/viajes (4).jpeg" alt="Imagen 4"></div>
+            
+        </div>
+        </div>
+        </div>
+        
+        <h1 class="Subtitle">Pequeños momentos</h1>
+    <div class="Reel">
+            
+            <div class="carousel-container4">
+            <div class="carousel">
+            <div><img src="images/Mas (1).jpeg" alt="Imagen 1"></div>    
+            <div><img src="images/Mas (2).jpeg" alt="Imagen 2"></div>
+            <div><img src="images/Mas (3).jpg" alt="Imagen 3"></div>
+            <div><img src="images/Mas (4).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (5).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (6).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (7).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (8).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (9).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (10).jpeg" alt="Imagen 4"></div>
+            <div><img src="images/Mas (11).jpeg" alt="Imagen 4"></div>
+    </div>
+    </div>
+    </div>
+
+<h1 class="Subtitle">Musica para recordar</h1>
+<div class="Music">
+    <audio id="cancion1" controls>
+        <source src="mp3/Ed Sheeran - photograph -- sub español.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio >
+    <audio id="cancion2" controls>
+        <source src="mp3/Prince Royce - Cúrame (Official Video) ft. Manuel Turizo.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+    <audio id="cancion3" controls>
+        <source src="mp3/Sebastián Yatra, Reik - Un Año (Official Video).mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+    <audio id="cancion4" controls>
+        <source src="mp3/Una loca como tú - Nanpa Básico (LETRA).mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+    <audio id="cancion5" controls>
+        <source src="mp3/Alex Fernández - Lo Que Tú Necesitas (Video Oficial).mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+    <audio id="cancion6" controls>
+        <source src="mp3/Gabriel Pagan feat. Elvis Crespo - Píntame.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    // Inicializar el carrusel
+    $(document).ready(function(){
+        $('.carousel').slick({
+            dots: true, // Muestra los puntos de navegación
+            infinite: true, // Navegación infinita
+            speed: 500, // Velocidad de transición en milisegundos
+            slidesToShow: 1, // Cantidad de imágenes visibles a la vez
+            adaptiveHeight: true // Ajusta la altura automáticamente
+        });
+    });
+
+    // Obtén una lista de todos los elementos de audio
+    const audios = document.querySelectorAll(".Music audio");
+
+    // Función para detener todos los audios excepto el actual
+    function detenerOtrosAudios(audioActual) {
+        audios.forEach(function(audio) {
+            if (audio !== audioActual) {
+                audio.pause();
+            }
+        });
+    }
+
+    // Agrega controladores de eventos a los botones o enlaces que inician las canciones
+    document.getElementById("cancion1").addEventListener("play", function() {
+        detenerOtrosAudios(document.getElementById("cancion1"));
+    });
+
+    document.getElementById("cancion2").addEventListener("play", function() {
+        detenerOtrosAudios(document.getElementById("cancion2"));
+    });
+
+    document.getElementById("cancion3").addEventListener("play", function() {
+        detenerOtrosAudios(document.getElementById("cancion3"));
+    });
+
+    document.getElementById("cancion4").addEventListener("play", function() {
+        detenerOtrosAudios(document.getElementById("cancion4"));
+    });
+
+    document.getElementById("cancion5").addEventListener("play", function() {
+        detenerOtrosAudios(document.getElementById("cancion5"));
+    });
+
+    document.getElementById("cancion6").addEventListener("play", function() {
+        detenerOtrosAudios(document.getElementById("cancion6"));
+    });
+</script>
+
+<div class="Subtitle">
+    <a href="heart.html">
+       <h1 class="color-changing-text heart"> ¿Como late mi corazon cuando te ve?</h1>
+    </a>
+</div>
+
+</body>
+</html>
